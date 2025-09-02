@@ -1,42 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Old+Standard+TT:wght@400;700&family=Cinzel:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Harry Potter Daily Prophet Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Aged newspaper colors */
+    --background: 42 15% 94%;
+    --foreground: 25 8% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Newspaper elements */
+    --paper: 42 20% 96%;
+    --paper-aged: 42 25% 88%;
+    --ink: 25 8% 15%;
+    --ink-faded: 25 6% 45%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Magical accents */
+    --gold: 43 96% 56%;
+    --gold-dark: 43 74% 49%;
+    --magic-purple: 259 94% 51%;
+    --magic-blue: 220 91% 42%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Card and components */
+    --card: 42 20% 96%;
+    --card-foreground: 25 8% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --popover: 42 20% 96%;
+    --popover-foreground: 25 8% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 25 8% 15%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 42 25% 88%;
+    --secondary-foreground: 25 8% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 42 25% 88%;
+    --muted-foreground: 25 6% 45%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --accent: 259 94% 51%;
+    --accent-foreground: 42 20% 96%;
 
-    --radius: 0.5rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 42 20% 96%;
+
+    --border: 42 15% 80%;
+    --input: 42 15% 80%;
+    --ring: 43 96% 56%;
+
+    --radius: 0.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +114,66 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-serif;
+    background-image: 
+      radial-gradient(circle at 20% 20%, hsl(var(--paper-aged)) 1px, transparent 1px),
+      radial-gradient(circle at 80% 80%, hsl(var(--paper-aged)) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px;
+  }
+}
+
+@layer components {
+  /* Newspaper Typography */
+  .newspaper-heading {
+    @apply font-display text-ink leading-tight tracking-wide;
+  }
+  
+  .newspaper-subheading {
+    @apply font-serif text-ink-faded tracking-widest uppercase;
+  }
+  
+  .newspaper-body {
+    @apply font-serif text-ink leading-relaxed;
+  }
+  
+  .newspaper-byline {
+    @apply font-serif text-ink-faded italic text-sm;
+  }
+
+  /* Column layouts */
+  .newspaper-column {
+    @apply border-r border-ink/20 pr-4 mr-4 last:border-r-0 last:pr-0 last:mr-0;
+  }
+
+  /* Magical effects */
+  .magical-border {
+    @apply border-2 border-gold/30 shadow-lg;
+    background: linear-gradient(45deg, hsl(var(--paper)), hsl(var(--paper-aged)));
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .sparkle-effect {
+    position: relative;
+  }
+  
+  .sparkle-effect::before {
+    content: '✨';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(180deg); }
   }
 }

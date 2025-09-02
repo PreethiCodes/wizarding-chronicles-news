@@ -18,12 +18,28 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'display': ['Cinzel', 'serif'],
+				'serif': ['Old Standard TT', 'serif'],
+				'headline': ['Playfair Display', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Newspaper specific colors
+				paper: 'hsl(var(--paper))',
+				'paper-aged': 'hsl(var(--paper-aged))',
+				ink: 'hsl(var(--ink))',
+				'ink-faded': 'hsl(var(--ink-faded))',
+				gold: 'hsl(var(--gold))',
+				'gold-dark': 'hsl(var(--gold-dark))',
+				'magic-purple': 'hsl(var(--magic-purple))',
+				'magic-blue': 'hsl(var(--magic-blue))',
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
