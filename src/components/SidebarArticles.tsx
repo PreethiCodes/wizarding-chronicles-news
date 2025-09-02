@@ -7,18 +7,39 @@ const SidebarArticles = () => {
       {/* Breaking News */}
       <Card className="magical-border">
         <CardHeader className="pb-3">
-          <Badge variant="destructive" className="w-fit mb-2">⚡ BREAKING</Badge>
+          <Badge variant="destructive" className="w-fit mb-2">
+            ⚡ BREAKING
+          </Badge>
           <CardTitle className="newspaper-heading text-xl">
             Triwizard Tournament Champions Selected
           </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="newspaper-body text-sm">
-            The Goblet of Fire has chosen its champions in a shocking turn of events. An unexpected fourth name emerged from the ancient artifact...
+            The Goblet of Fire has chosen its champions in a shocking turn of
+            events. An unexpected fourth name emerged from the ancient
+            artifact...
           </p>
           <p className="newspaper-byline mt-2">— Sports Desk</p>
         </CardContent>
       </Card>
+
+        <span className="magical-sparkles" aria-hidden="true"></span>
+        <img
+          src="/harry-potter.gif"
+          alt="Harry Potter"
+          className="magical-gif"
+          style={{
+            width: "100%",
+            maxWidth: "300px",
+            display: "block",
+            margin: "0 auto",
+            position:"relative",
+            top:"20px",
+            borderRadius: "16px",
+          }}
+        />
+     
 
       {/* Ministry News */}
       <Card className="magical-border">
@@ -29,7 +50,8 @@ const SidebarArticles = () => {
         </CardHeader>
         <CardContent>
           <p className="newspaper-body text-sm">
-            The Department for Regulation and Control of Magical Creatures announced sweeping changes to dragon breeding permits...
+            The Department for Regulation and Control of Magical Creatures
+            announced sweeping changes to dragon breeding permits...
           </p>
           <p className="newspaper-byline mt-2">— Ministry Correspondent</p>
         </CardContent>
@@ -51,7 +73,9 @@ const SidebarArticles = () => {
             <span>Puddlemere United</span>
             <span className="font-bold">140</span>
           </div>
-          <p className="newspaper-byline">Seeker catch by Murphy at 67 minutes</p>
+          <p className="newspaper-byline">
+            Seeker catch by Murphy at 67 minutes
+          </p>
         </CardContent>
       </Card>
 
@@ -64,9 +88,16 @@ const SidebarArticles = () => {
         </CardHeader>
         <CardContent>
           <div className="newspaper-body text-sm space-y-2">
-            <p><strong>Tonight:</strong> Cloudy with scattered pixie dust</p>
-            <p><strong>Tomorrow:</strong> Bright with flying carpets at low altitude</p>
-            <p><strong>Weekend:</strong> Possible dragon sightings in the north</p>
+            <p>
+              <strong>Tonight:</strong> Cloudy with scattered pixie dust
+            </p>
+            <p>
+              <strong>Tomorrow:</strong> Bright with flying carpets at low
+              altitude
+            </p>
+            <p>
+              <strong>Weekend:</strong> Possible dragon sightings in the north
+            </p>
           </div>
         </CardContent>
       </Card>
@@ -81,15 +112,21 @@ const SidebarArticles = () => {
         <CardContent className="space-y-3">
           <div className="border-b border-magic-purple/20 pb-2">
             <p className="font-medium text-sm">LOST: One Remembrall</p>
-            <p className="text-xs text-ink-faded">If found, please return to Neville Longbottom, Gryffindor Tower</p>
+            <p className="text-xs text-ink-faded">
+              If found, please return to Neville Longbottom, Gryffindor Tower
+            </p>
           </div>
           <div className="border-b border-magic-purple/20 pb-2">
             <p className="font-medium text-sm">FOR SALE: Flying Ford Anglia</p>
-            <p className="text-xs text-ink-faded">Slightly used. May require some tree removal. Contact R. Weasley</p>
+            <p className="text-xs text-ink-faded">
+              Slightly used. May require some tree removal. Contact R. Weasley
+            </p>
           </div>
           <div>
             <p className="font-medium text-sm">WANTED: Potions Tutor</p>
-            <p className="text-xs text-ink-faded">Desperate Gryffindor seeks help. Payment in Chocolate Frogs</p>
+            <p className="text-xs text-ink-faded">
+              Desperate Gryffindor seeks help. Payment in Chocolate Frogs
+            </p>
           </div>
         </CardContent>
       </Card>
